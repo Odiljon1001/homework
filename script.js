@@ -13,3 +13,20 @@ if (arr[i] == 's') {
 }
 let SSS = box.join('-')
 console.log(SSS);
+let miqdor = +prompt('Son kiriting')
+let box = [ ]
+let box2 = []
+let num = '!!!Hi!'
+function luboy() {
+    let num2 =num.split('')
+    for (let i = 1; i <= num2.length; i++) {
+        if (i > miqdor || i == 'Hi') {
+            box2.push(num2[i])
+        } else {
+            //console.log('');
+        }
+    }
+    // return console.log(box)
+    console.log(box2.join(''))
+}
+luboy()
