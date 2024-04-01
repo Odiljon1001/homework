@@ -32,9 +32,9 @@
 // luboy()
 
 let textUpperCase = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-console.log(textUpperCase);
+//console.log(textUpperCase);
 let array = textUpperCase.split(' ')
-console.log(array)
+//console.log(array)
 let upperCase = []
 let lowerCase = []
 let conCat = ''
@@ -44,7 +44,7 @@ for (let i = 0; i < array.length; i++) {
   upperCase = array[i].at(0).toUpperCase()
 	lowerCase = array[i].slice(1).toLowerCase()
   conCat = upperCase.concat(lowerCase)
-  console.log(conCat);
+  //console.log(conCat);
   result.push(conCat)
 }
 console.log(result.join(' '));
