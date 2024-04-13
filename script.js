@@ -1,67 +1,21 @@
-// let str = 'salom bolajonlar salom nima gap salom yaxshimisan'
-// let arr = str.split('')
-// // console.log(arr);
-// let box = []
-// for (let i = 0; i < arr.length; i++) {
-// // console.log(arr[i]);
-// if (arr[i] == 's') {
-//     // console.log(arr[i]); 
-//     box.push(arr[i])
-// } else {
-//     // console.log('error');
-// }
-// }
-// let SSS = box.join('-')
-// console.log(SSS);
-// let miqdor = +prompt('Son kiriting')
-// let box = [ ]
-// let box2 = []
-// let num = '!!!Hi!'
-// function luboy() {
-//     let num2 =num.split('')
-//     for (let i = 1; i <= num2.length; i++) {
-//         if (i > miqdor || i == 'Hi') {
-//             box2.push(num2[i])
-//         } else {
-//             //console.log('');
-//         }
-//     }
-//     // return console.log(box)
-//     console.log(box2.join(''))
-// }
-// luboy()
+function findTwoLargestNumbers() {
+    // Получаем ввод пользователя через prompt и разделяем его на массив чисел
+    let input = prompt("Введите числа через запятую:").split(",").map(Number);
 
-let textUpperCase = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-//console.log(textUpperCase);
-let array = textUpperCase.split(' ')
-//console.log(array)
-let upperCase = []
-let lowerCase = []
-let conCat = ''
-let result = []
+    // Проверяем, что введены числа
+    if (!input.every(num => !isNaN(num))) {
+        return "Ошибка: Пожалуйста, введите только числа.";
+    }
 
-for (let i = 0; i < array.length; i++) {
-  upperCase = array[i].at(0).toUpperCase()
-	lowerCase = array[i].slice(1).toLowerCase()
-  conCat = upperCase.concat(lowerCase)
-  //console.log(conCat);
-  result.push(conCat)
+    // Сортируем массив чисел по убыванию
+    let sortedNumbers = input.sort((a, b) => b - a);
+
+    // Берем первые два элемента (два наибольших числа)
+    let largestNumbers = sortedNumbers.slice(0, 2);
+
+    // Возвращаем массив из двух наибольших чисел
+    return largestNumbers;
 }
-console.log(result.join(' '));
 
-let str = prompt('Unli harflari bor soz yozing')
-let unli = ['u', 'a', 'e', 'o', 'i', "o'"]
-let arr = str.split('')
-//console.log(arr);
-let son = []
-let son2 = []
-for (let i = 0; i < unli.length; i++) {
-	for (let j = 0; j < arr.length; j++) {
-		if (arr[j].toLowerCase() == unli[i]) {
-      son ++ //arr[j]
-      //console.log(arr[j]);
-		}
-	}
-}
-console.log(`Siz kiritgan so'z: (${str})`);
-console.log(`Siz kiritgan so'z ichida: ${son} ta unli harif topdim`);
+// Вызываем функцию и выводим результат в консоль
+console.log(findTwoLargestNumbers());
