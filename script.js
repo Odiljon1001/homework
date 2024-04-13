@@ -1,21 +1,15 @@
-function findTwoLargestNumbers() {
-    // Получаем ввод пользователя через prompt и разделяем его на массив чисел
-    let input = prompt("Введите числа через запятую:").split(",").map(Number);
+function theTwoLargestNumbers() {
+	let input = prompt('joy tashab sonlar kiriting:').split(' ').map(Number)
+	console.log(input)
+	if (!input.every(num => !isNaN(num))) {
+		return 'Faqat son kiriting.'
+	}
 
-    // Проверяем, что введены числа
-    if (!input.every(num => !isNaN(num))) {
-        return "Ошибка: Пожалуйста, введите только числа.";
-    }
+	let sortedNumbers = input.sort((a, b) => b - a)
 
-    // Сортируем массив чисел по убыванию
-    let sortedNumbers = input.sort((a, b) => b - a);
+	let largestNumbers = sortedNumbers.slice(0, 2)
 
-    // Берем первые два элемента (два наибольших числа)
-    let largestNumbers = sortedNumbers.slice(0, 2);
-
-    // Возвращаем массив из двух наибольших чисел
-    return largestNumbers;
+	return largestNumbers
 }
 
-// Вызываем функцию и выводим результат в консоль
-console.log(findTwoLargestNumbers());
+console.log(theTwoLargestNumbers())
