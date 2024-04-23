@@ -1,15 +1,34 @@
-function theTwoLargestNumbers() {
-	let input = prompt('joy tashab sonlar kiriting:').split(' ').map(Number)
-	console.log(input)
-	if (!input.every(num => !isNaN(num))) {
-		return 'Faqat son kiriting.'
-	}
+let cards = document.querySelectorAll('.card')
+let colors = [
+	'red',
+	'blue',
+	'aqua',
+	'green',
+	'gray',
+	'black',
+	'indigo',
+	'purple',
+	'yellow',
+	'brown',
+	'orange',
+]
 
-	let sortedNumbers = input.sort((a, b) => b - a)
-
-	let largestNumbers = sortedNumbers.slice(0, 2)
-
-	return largestNumbers
+function rand() {
+	let i = Math.floor(Math.random() * colors.length)
+	return colors[i]
 }
 
-console.log(theTwoLargestNumbers())
+function randColors() {
+	cards.forEach(card => {
+		card.style.background = rand()
+	})
+}
+
+// let randbtn = document.querySelector('.randbtn')
+// randbtn.addEventListener('click', randColors)
+
+cards.forEach(card => {
+	card.addEventListener('click', () => {
+		card.style.background = rand()
+	})
+})
